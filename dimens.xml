@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Small screen dimensions -->
+    <dimen name="screen_padding">12dp</dimen>
+    <dimen name="content_margin_small">4dp</dimen>
+    <dimen name="content_margin_medium">8dp</dimen>
+    <dimen name="content_margin_large">12dp</dimen>
+    <dimen name="content_margin_xlarge">16dp</dimen>
+    
+    <!-- PIN display dimensions -->
+    <dimen name="pin_digit_size">40dp</dimen>
+    <dimen name="pin_digit_text_size">20sp</dimen>
+    <dimen name="pin_indicator_height">2dp</dimen>
+    <dimen name="pin_spacing">8dp</dimen>
+    
+    <!-- Number pad dimensions -->
+    <dimen name="number_button_size">60dp</dimen>
+    <dimen name="number_button_text_size">24sp</dimen>
+    <dimen name="number_button_margin">6dp</dimen>
+    
+    <!-- Header spacing -->
+    <dimen name="header_top_margin">8dp</dimen>
+    <dimen name="header_spacing">6dp</dimen>
+    <dimen name="section_spacing">16dp</dimen>
+</resources>

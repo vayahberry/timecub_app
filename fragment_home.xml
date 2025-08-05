@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/time_cub_parent_home" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parent_home_line"
+            android:layout_marginTop="5dp" />
+
+        <!-- Home Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_icon_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="20dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/parent_home_text"
+                android:paddingBottom="10dp"
+                android:layout_gravity="bottom" />
+
+        </LinearLayout>
+
+        <!-- Main Action Buttons -->
+        <ImageButton
+            android:id="@+id/parental_control_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/parental_control_button_selector"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/button_scale_down"
+            android:soundEffectsEnabled="true"
+            android:hapticFeedbackEnabled="true"
+            android:contentDescription="Parental Control" />
+
+        <ImageButton
+            android:id="@+id/app_management_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/app_management_btn_selector"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:clickable="true"
+            android:layout_marginTop="15dp"
+            android:focusable="true"
+            android:stateListAnimator="@animator/button_scale_down"
+            android:soundEffectsEnabled="true"
+            android:hapticFeedbackEnabled="true"
+            android:contentDescription="App Management" />
+
+        <!-- Recent Activity Section -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/recent_activity"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <!-- App Usage Report -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_usage_icon"
+                android:layout_marginStart="25dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/app_usage_report_text"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/app_usage_report_view_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_usage_report_view_btn_selector"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/button_scale_down"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true"
+                android:contentDescription="View App Usage Report" />
+
+        </LinearLayout>
+
+        <!-- Screen Time Overview -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/screentime_overview_icon"
+                android:layout_marginStart="25dp"
+                android:layout_gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/screentime_overview_text"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/screentime_overview_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/screentime_overview_btn_selector"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/button_scale_down"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true"
+                android:contentDescription="Screen Time Overview" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

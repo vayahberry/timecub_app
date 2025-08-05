@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/screen_padding">
+
+        <!-- Guidelines for better responsive layout -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:id="@+id/headerSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/header_top_margin"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.9">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/timecub_text"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/header_spacing"
+                android:src="@drawable/input_pin"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside" />
+
+        </LinearLayout>
+
+        <!-- PIN Display and Indicators Container -->
+        <LinearLayout
+            android:id="@+id/pinContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:orientation="horizontal"
+            android:padding="@dimen/content_margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerSection">
+
+            <!-- PIN Position 1 -->
+            <LinearLayout
+                android:layout_width="@dimen/pin_digit_size"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/pin_spacing"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pinDigit1"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_digit_size"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/pin_digit_text_size"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <View
+                    android:id="@+id/pinIndicator1"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_indicator_height"
+                    android:layout_marginTop="@dimen/content_margin_small"
+                    android:background="@drawable/pin_indicator_empty" />
+
+            </LinearLayout>
+
+            <!-- PIN Position 2 -->
+            <LinearLayout
+                android:layout_width="@dimen/pin_digit_size"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/pin_spacing"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pinDigit2"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_digit_size"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/pin_digit_text_size"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <View
+                    android:id="@+id/pinIndicator2"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_indicator_height"
+                    android:layout_marginTop="@dimen/content_margin_small"
+                    android:background="@drawable/pin_indicator_empty" />
+
+            </LinearLayout>
+
+            <!-- PIN Position 3 -->
+            <LinearLayout
+                android:layout_width="@dimen/pin_digit_size"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/pin_spacing"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pinDigit3"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_digit_size"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/pin_digit_text_size"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <View
+                    android:id="@+id/pinIndicator3"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_indicator_height"
+                    android:layout_marginTop="@dimen/content_margin_small"
+                    android:background="@drawable/pin_indicator_empty" />
+
+            </LinearLayout>
+
+            <!-- PIN Position 4 -->
+            <LinearLayout
+                android:layout_width="@dimen/pin_digit_size"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pinDigit4"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_digit_size"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/pin_digit_text_size"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <View
+                    android:id="@+id/pinIndicator4"
+                    android:layout_width="@dimen/pin_digit_size"
+                    android:layout_height="@dimen/pin_indicator_height"
+                    android:layout_marginTop="@dimen/content_margin_small"
+                    android:background="@drawable/pin_indicator_empty" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Number Pad -->
+        <GridLayout
+            android:id="@+id/numberPad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:columnCount="3"
+            android:rowCount="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pinContainer">
+
+            <!-- Row 1: 1, 2, 3 -->
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="1"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="2"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="3"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <!-- Row 2: 4, 5, 6 -->
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="4"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="5"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="6"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <!-- Row 3: 7, 8, 9 -->
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="7"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="8"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btn9"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="9"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <!-- Row 4: Empty, 0, Delete -->
+            <View
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin" />
+
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/number_button_background"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="@dimen/number_button_size"
+                android:layout_height="@dimen/number_button_size"
+                android:layout_margin="@dimen/number_button_margin"
+                android:background="@drawable/delete_button_background"
+                android:text="⌫"
+                android:textColor="#FF0000"
+                android:textSize="@dimen/number_button_text_size"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:soundEffectsEnabled="true"
+                android:hapticFeedbackEnabled="true"
+                android:contentDescription="Delete" />
+
+        </GridLayout>
+
+        <!-- Confirm Button -->
+        <ImageButton
+            android:id="@+id/confirmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:layout_marginBottom="@dimen/content_margin_large"
+            android:background="@android:color/transparent"
+            android:src="@drawable/confirm_pin_button_selector"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:soundEffectsEnabled="true"
+            android:hapticFeedbackEnabled="true"
+            android:stateListAnimator="@animator/button_scale_down"
+            android:contentDescription="Confirm PIN"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberPad"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
